@@ -1,12 +1,12 @@
 package data.structure;
 
 public class Node {
-    private Object data;
-    private Node link;
+    Object data;
+    Node link;
 
     public Node(Object data) {
         this.data = data;
-        this.link = null;
+        this.link = null;  
     }
 
     public Node(Object data, Node link) {
