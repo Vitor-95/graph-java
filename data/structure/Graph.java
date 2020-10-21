@@ -93,7 +93,31 @@ public class Graph {
             }
         }
     }
-    
+
+    public void shortPath2(Vertex start){
+        BFS(start);
+        Stack<Vertex> verStack=new Stack<>();
+        System.out.println("\nIMPRIMIR RECORRIDOS: ");
+        for(int i=1;i<vertexs.length;i++){
+            Vertex parent=vertexs[i];
+            System.out.print("Vertice ("+parent.getLabel()+"): ");
+            while(parent!=null){
+                verStack.push(parent);
+                parent=parent.getParents();
+            }
+            while(!verStack.isEmpty()){
+                System.out.print(verStack.pop().getLabel());
+                
+                if(!verStack.isEmpty()){
+                    System.out.print("-->");
+                }
+            }
+            System.out.println(" ");
+        }
+        
+        
+    }
+
     public void DFS(Vertex vertex){
         ListLinked<Vertex> travelBFS=new ListLinked<>();
         //Queue<Vertex> queue=new LinkedList<>();
@@ -193,6 +217,28 @@ public class Graph {
             //TODO: handle exception
         }
         
+        
+    }
+    /*public void printGraph(){
+        ListLinked<Edge> edges;
+        String output="";
+        for(int i=0;i<vertexs.length;i++){
+            Vertex vertex=vertexs[i];
+            output=output+vertexs[i].getLabel();
+            edges= vertex.getEdges();
+            output=output+"("+edges.size()+") -> ";
+            Node<Edge> temp=edges.getHead();
+            while(temp!=null){
+                output=output+"{"+temp.getData().getV2().getLabel()+"}";
+                temp=temp.getLink();
+            }
+            output=output+"\n";
+        }
+        System.out.println(output);
+    }*/
+    public void connected(){
+        ListLinked<Edge> edges;
+
     }
     public static void main(String[] args) {
         Graph graph=new Graph(false);

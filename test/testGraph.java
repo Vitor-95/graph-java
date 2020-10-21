@@ -12,7 +12,7 @@ public class testGraph {
         //graph.BFS(graph.getVertexList().getHead().getData());
         //System.out.println("IMPRIMIR GRAFO DFS");
         //graph.DFS(graph.getVertexList().getHead().getData());
-        graph.shortPath(graph.getVertexList().getHead().getData(),graph.getVertex(6));
+        //graph.shortPath(graph.getVertexList().getHead().getData(),graph.getVertex(6));
     }   
     public static void main(String[] args) {
         testPrint();

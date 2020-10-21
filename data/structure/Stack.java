@@ -32,7 +32,6 @@ public class Stack<E> {
         Node<E> n;
         n=top;
         if(top!=null){
-            System.out.println("Elementos de la Pila: ");
             while(n!=null){
                 System.out.println(n.getData());
                 n=n.getLink();
