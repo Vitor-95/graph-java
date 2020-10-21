@@ -1,20 +1,20 @@
 package data.structure;
 
-public class Stack {
-    Node top;
+public class Stack<E> {
+    Node<E> top;
     private int cont;
     public Stack(){
         top=null;
         cont=0;
     }
-    public void push(Object dato){
-        Node aux;
+    public void push(E dato){
+        Node<E> aux;
         if(top!=null){
-            aux=new Node(dato,null);
-            aux.link=top;
+            aux=new Node<>(dato,null);
+            aux.setLink(top);
             top=aux;
         }else{
-            top=new Node(dato,top);
+            top=new Node<>(dato,top);
         }
         cont++;
     }
@@ -29,7 +29,7 @@ public class Stack {
         }
     }
     public void showStack(){
-        Node n;
+        Node<E> n;
         n=top;
         if(top!=null){
             System.out.println("Elementos de la Pila: ");
@@ -46,7 +46,7 @@ public class Stack {
         if(top!=null){
             //System.out.println("Se elimino el elemento: "+top.getData());
             a=top.getData();
-            top=top.link;
+            top=top.getLink();
         }/*else{
             System.out.println("No se puede extraer, la pila esta vacia");
         }*/

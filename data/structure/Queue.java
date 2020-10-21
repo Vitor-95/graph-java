@@ -1,8 +1,8 @@
 package data.structure;
 
-public class Queue {
-    Node head;
-    Node tail;
+public class Queue<E> {
+    Node<E> head;
+    Node<E> tail;
     int size;
 
     public Queue() {
@@ -14,8 +14,8 @@ public class Queue {
         return head == null;
     }
 
-    public void push(Object data) {
-        Node node = new Node(data);
+    public void push(E data) {
+        Node<E> node = new Node<>(data);
         if (isEmpty()) {
             head = node;
         } else {
@@ -29,14 +29,14 @@ public class Queue {
         if(head!=null){
             //System.out.println("Se elimino el elemento: "+head.getData());
             a=head.getData();
-            head=head.link;
+            head=head.getLink();
         }/*else{
             System.out.println("No se puede extraer, la cola esta vacia");
         }*/
         return a;
     }
     public void showQueue(){
-        Node n;
+        Node<E> n;
         n=head;
         if(head!=null){
             System.out.println("Elementos de la Cola: ");
